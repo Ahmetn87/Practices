@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Practices</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_recycle_view">RecycleViewActivity</string>
+    <string name="title_activity_sqlite_example">SqliteExample</string>
+    <string name="title_activity_content_provider">ContentProviderActivity</string>
+    <string name="title_activity_card_view_example">CardViewExampleActivity</string>
+    <string name="title_activity_volley_example">VolleyExample</string>
+    <string name="title_activity_auto_complete_text">AutoCompleteText</string>
+</resources>
