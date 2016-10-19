@@ -133,6 +133,7 @@ public class ContentProviderActivity extends AppCompatActivity {
     public void getAllRecords(Button button)
     {
         getAllPersonRecords();
+        // oho
     }
 
 }
