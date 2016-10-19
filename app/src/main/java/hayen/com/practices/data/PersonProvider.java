@@ -106,6 +106,7 @@ public class PersonProvider extends ContentProvider {
     {
         String name = SqliteExampleColumns.PersonEntry.getNameFromUri(uri);
         personQueryBuilder = new SQLiteQueryBuilder();
+        personQueryBuilder.setTables(SqliteExampleColumns.PersonEntry.TABLE_NAME);
         return personQueryBuilder.query(dbHelpler.getReadableDatabase(),
                 projection,
                 mNameClause,

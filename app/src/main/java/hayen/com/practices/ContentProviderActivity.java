@@ -1,6 +1,7 @@
 package hayen.com.practices;
 
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -47,7 +48,7 @@ public class ContentProviderActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+//        getName(txtName.getText().toString());
 
 
     }
@@ -69,9 +70,9 @@ public class ContentProviderActivity extends AppCompatActivity {
 
     private void getName(String name)
     {
-        String[] selection = new String[]{name};
+        Uri withName = SqliteExampleColumns.PersonEntry.buildPersonInfoWithName(name);
         String[] projection = new String[]{SqliteExampleColumns.PersonEntry.COLUMN_PERSON_NAME};
-        Cursor names = getContentResolver().query(SqliteExampleColumns.PersonEntry.CONTENT_URI,projection,null,selection,null);
+        Cursor names = getContentResolver().query(withName,projection,null,null,null);
         while (names.moveToNext())
         {
             int nameIndex = names.getColumnIndex(SqliteExampleColumns.PersonEntry.COLUMN_PERSON_NAME);

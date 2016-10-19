@@ -45,18 +45,25 @@ public class SqliteExampleColumns {
         public static final String COLUMN_PERSON_NAME = "name";
         public static final String COLUMN_PERSON_JOB = "job";
 
-        // we are going to send inserted row id
+        /**
+         * Gonna append the row id and return it back
+         * */
         public static Uri buildPersonUri(long id)
         {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
 
-
+        /**
+         * Append the name parameter to the URI
+         * */
         public static Uri buildPersonInfoWithName(String name)
         {
             return CONTENT_URI.buildUpon().appendPath(name).build();
         }
 
+        /**
+         * It will take out name parameter from the given URI
+         * */
         public static String getNameFromUri(Uri uri)
         {
             return uri.getPathSegments().get(1);
