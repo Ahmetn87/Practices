@@ -12,9 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.google.gson.Gson;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import hayen.com.practices.data.SmartMeterConnectionManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,14 +55,22 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-//    btnAutoCompleteTextView =(Button) findViewById(R.id.btn_auto_complete_textview_example);
-//        btnAutoCompleteTextView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.w(TAG, "onClick: " );
-//            }
-//        });
-        setTitle(null);
+
+        SmartMeterConnectionManager.checkSmartMeterExistance(this, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Gson gson = new Gson();
+                String jsonString = gson.toJson(response);
+                Log.w(TAG, "response: "+ response );
+                Log.w(TAG, "jsonString: "+ jsonString );
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
     }
 
     @OnClick(R.id.btn_recycle_example)

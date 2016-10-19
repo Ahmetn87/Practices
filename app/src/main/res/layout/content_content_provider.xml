@@ -23,7 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="job"/>
-
+    <Button
+        android:id="@+id/btn_get_all_records_content_provider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get all records"/>
     <Button
         android:id="@+id/btn_find_content_provider"
         android:layout_width="match_parent"

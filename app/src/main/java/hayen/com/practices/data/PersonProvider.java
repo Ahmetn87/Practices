@@ -41,13 +41,16 @@ public class PersonProvider extends ContentProvider {
 
     @Nullable
     @Override                   // Projection      Selection  Selection Args    SortOrder
-    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+    public Cursor query(@Nullable Uri uri, @Nullable String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         Cursor retCursor ;
         switch (mUriMatcher.match(uri))
         {
+            case ALL_PERSON_RECORD:
+                retCursor = getAllPersonRecords(projection, sortOrder);
+                break;
             case PERSON_WITH_NAME:
             {
-                retCursor = getPersonWithName(uri,projection,sortOrder);
+                retCursor = getPersonWithName(uri, projection, sortOrder);
                 break;
             }default:
             throw new UnsupportedOperationException("Uknown Uri "+ uri);
@@ -55,6 +58,8 @@ public class PersonProvider extends ContentProvider {
         retCursor.setNotificationUri(getContext().getContentResolver(),uri);
         return retCursor;
     }
+
+
 
     @Nullable
     @Override
@@ -116,8 +121,18 @@ public class PersonProvider extends ContentProvider {
                 sortOrder);
     }
 
+    private Cursor getAllPersonRecords(String[] projection, String sortOrder) {
+        personQueryBuilder = new SQLiteQueryBuilder();
+        personQueryBuilder.setTables(SqliteExampleColumns.PersonEntry.TABLE_NAME);
 
-
+        return personQueryBuilder.query(dbHelpler.getReadableDatabase(),
+                projection,
+                null,
+                null,
+                null,
+                null,
+                sortOrder);
+    }
 
 
 
