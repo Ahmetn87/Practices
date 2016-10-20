@@ -11,14 +11,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import hayen.com.practices.Entity.EventBusMessage;
 import hayen.com.practices.data.SmartMeterConnectionManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
     Button btnVolleyRequest;
     @BindView(R.id.btn_auto_complete_textview_example)
     Button btnAutoCompleteTextView;
-
+    @BindView(R.id.txt_eventbus_message)
+    TextView eventBusMessage;
+    @BindView(R.id.btn_eventbus_example)
+    Button btnEventBus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        EventBus.getDefault().register(this);
         ButterKnife.bind(this);
-        ButterKnife.setDebug(true);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,20 +66,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        SmartMeterConnectionManager.checkSmartMeterExistance(this, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Gson gson = new Gson();
-                String jsonString = gson.toJson(response);
-                Log.w(TAG, "response: "+ response );
-                Log.w(TAG, "jsonString: "+ jsonString );
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
+//        SmartMeterConnectionManager.checkSmartMeterExistance(this, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                Gson gson = new Gson();
+//                String jsonString = gson.toJson(response);
+//                Log.w(TAG, "response: "+ response );
+//                Log.w(TAG, "jsonString: "+ jsonString );
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//            }
+//        });
 
     }
 
@@ -115,6 +125,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Subscribe
+    public void onEvent(EventBusMessage message)
+    {
+        Log.w(TAG, "onMessageEvent triggered "+message.getMessage() );
+        eventBusMessage.setText(message.getMessage());
+    }
+
+    @OnClick(R.id.btn_eventbus_example)
+    public void eventBus(Button button)
+    {
+        Intent intent = new Intent(this,EventBusActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -31,4 +31,5 @@ dependencies {
     compile 'org.immutables:gson:2.1.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
 }
