@@ -71,10 +71,20 @@
         </activity>
 
         <provider
-            android:authorities="hayen.com.practices"
             android:name=".data.PersonProvider"
+            android:authorities="hayen.com.practices"
             android:exported="false"
-            android:syncable="true"/>
+            android:syncable="true" />
+
+        <activity
+            android:name=".RecycleViewHeaderExample"
+            android:label="@string/title_activity_recycle_view_header_example"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hayen.com.practices.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
