@@ -7,5 +7,10 @@
     <string name="title_activity_card_view_example">CardViewExampleActivity</string>
     <string name="title_activity_volley_example">VolleyExample</string>
     <string name="title_activity_auto_complete_text">AutoCompleteText</string>
+<<<<<<< HEAD
     <string name="title_activity_event_bus">EventBusActivity</string>
+=======
+    <string name="title_activity_recycle_view_header_example">RecycleViewHeaderExample</string>
+    <string name="title_activity_dagger2_example">Dagger2Example</string>
+>>>>>>> android
 </resources>

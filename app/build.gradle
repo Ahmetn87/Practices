@@ -31,5 +31,11 @@ dependencies {
     compile 'org.immutables:gson:2.1.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.jakewharton:butterknife:8.4.0'
+<<<<<<< HEAD
     compile 'org.greenrobot:eventbus:3.0.0'
+=======
+    apt 'com.google.dagger:dagger-compiler:2.7'
+    compile 'com.google.dagger:dagger:2.7'
+    provided 'javax.annotation:jsr250-api:1.0'
+>>>>>>> android
 }

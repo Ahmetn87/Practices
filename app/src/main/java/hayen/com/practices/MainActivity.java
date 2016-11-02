@@ -42,10 +42,16 @@ public class MainActivity extends AppCompatActivity {
     Button btnVolleyRequest;
     @BindView(R.id.btn_auto_complete_textview_example)
     Button btnAutoCompleteTextView;
+<<<<<<< HEAD
     @BindView(R.id.txt_eventbus_message)
     TextView eventBusMessage;
     @BindView(R.id.btn_eventbus_example)
     Button btnEventBus;
+=======
+    @BindView(R.id.btn_dagger_example)
+    Button btnDaggerExample;
+
+>>>>>>> android
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+<<<<<<< HEAD
     @Subscribe
     public void onEvent(EventBusMessage message)
     {
@@ -138,6 +145,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,EventBusActivity.class);
         startActivity(intent);
     }
+=======
+    @OnClick(R.id.btn_dagger_example)
+    public void dagger(Button button)
+    {
+        Log.w(TAG, "autoCompleteTextviewActivity: " );
+        Intent intent = new Intent(this,Dagger2Example.class);
+        startActivity(intent);
+    }
+
+>>>>>>> android
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

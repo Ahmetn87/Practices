@@ -16,6 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:orientation="vertical">
 
         <Button
@@ -71,3 +72,37 @@
     </LinearLayout>
 
 </ScrollView>
+=======
+        android:text="Recycle Example" />
+    <Button
+        android:id="@+id/btn_sqlite_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sqlite Example" />
+    <Button
+        android:id="@+id/btn_content_provider_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Content Provider Example" />
+    <Button
+        android:id="@+id/btn_card_view_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Card view Example" />
+    <Button
+        android:id="@+id/btn_volley_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volley Example" />
+    <Button
+        android:id="@+id/btn_auto_complete_textview_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Auto Complete Example" />
+    <Button
+        android:id="@+id/btn_dagger_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dagger2 Example" />
+</LinearLayout>
+>>>>>>> android

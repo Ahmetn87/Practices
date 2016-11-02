@@ -8,6 +8,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".MyApp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -77,8 +78,22 @@
             android:syncable="true" />
 
         <activity
+<<<<<<< HEAD
             android:name=".EventBusActivity"
             android:label="@string/title_activity_event_bus"
+=======
+            android:name=".RecycleViewHeaderExample"
+            android:label="@string/title_activity_recycle_view_header_example"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hayen.com.practices.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Dagger2Example"
+            android:label="@string/title_activity_dagger2_example"
+>>>>>>> android
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
