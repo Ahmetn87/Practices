@@ -2,6 +2,7 @@ package hayen.com.practices.di.components;
 
 import dagger.Component;
 import hayen.com.practices.Dagger2Example;
+import hayen.com.practices.DiExtra;
 import hayen.com.practices.Entity.Person;
 import hayen.com.practices.di.modules.UserModule;
 
@@ -13,6 +14,8 @@ import hayen.com.practices.di.modules.UserModule;
 public interface UserComponent {
     String getUserInfo();
     Person getPerson();
+    DiExtra extra();
 
     void inject(Dagger2Example dagger2Example);
+
 }

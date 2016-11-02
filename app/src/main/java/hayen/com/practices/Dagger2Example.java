@@ -9,14 +9,26 @@ import android.util.Log;
 import android.view.View;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import hayen.com.practices.Entity.Person;
 
 public class Dagger2Example extends AppCompatActivity {
 
     private static final String TAG = Dagger2Example.class.getName();
+
+    /**
+     * Either inject by name or directly
+     * */
     @Inject
+    @Named("Ahmet")
     Person person;
+
+    /**
+     * Inject class and it s dependencies
+     * */
+    @Inject
+    DiExtra extra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +48,13 @@ public class Dagger2Example extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // add to manifest android:name = .MyApp
         ((MyApp)getApplication()).getUserComponent().inject(this);
+
         if (person != null) Log.w(TAG, "User name: "+person.getName() );
         else Log.w(TAG, "user is null tho " );
+
+        Log.w(TAG, "extra name: "+extra.getNameTho() );
     }
+
+
 
 }

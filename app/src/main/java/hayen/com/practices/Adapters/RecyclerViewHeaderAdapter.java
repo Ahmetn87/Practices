@@ -57,7 +57,7 @@ public class RecyclerViewHeaderAdapter  extends RecyclerView.Adapter<RecyclerVie
             ((HeaderCellViewHolder) holder).headerText.setText("ETIKETLER");
         }else if (holder instanceof CellViewHolder)
         {
-            
+            // TODO here .......................
         }
     }
 
