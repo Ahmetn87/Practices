@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnVolleyRequest;
     @BindView(R.id.btn_auto_complete_textview_example)
     Button btnAutoCompleteTextView;
+    @BindView(R.id.btn_dagger_example)
+    Button btnDaggerExample;
 
 
     @Override
@@ -112,6 +114,14 @@ public class MainActivity extends AppCompatActivity {
     {
         Log.w(TAG, "autoCompleteTextviewActivity: " );
         Intent intent = new Intent(this,AutoCompleteText.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.btn_dagger_example)
+    public void dagger(Button button)
+    {
+        Log.w(TAG, "autoCompleteTextviewActivity: " );
+        Intent intent = new Intent(this,Dagger2Example.class);
         startActivity(intent);
     }
 

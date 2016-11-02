@@ -8,4 +8,5 @@
     <string name="title_activity_volley_example">VolleyExample</string>
     <string name="title_activity_auto_complete_text">AutoCompleteText</string>
     <string name="title_activity_recycle_view_header_example">RecycleViewHeaderExample</string>
+    <string name="title_activity_dagger2_example">Dagger2Example</string>
 </resources>

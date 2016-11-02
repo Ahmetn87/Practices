@@ -3,7 +3,7 @@ apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
         applicationId "hayen.com.practices"
@@ -31,4 +31,7 @@ dependencies {
     compile 'org.immutables:gson:2.1.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.google.dagger:dagger-compiler:2.7'
+    compile 'com.google.dagger:dagger:2.7'
+    provided 'javax.annotation:jsr250-api:1.0'
 }
