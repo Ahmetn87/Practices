@@ -1,5 +1,9 @@
 package hayen.com.practices.di.modules;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import javax.inject.Named;
 
 import dagger.Module;
@@ -13,18 +17,32 @@ import hayen.com.practices.Entity.Person;
 @Module
 public class UserModule {
 
-    @Provides
-    String providesUserInfo()
-    {
-        return "Ahmet Nazim Macit";
+    private static List<String> nameList = new ArrayList<>();
+
+    static{
+        nameList.add("Ahmet");
+        nameList.add("Mehmet");
+        nameList.add("Ali");
+        nameList.add("Veli");
+        nameList.add("Saban");
+        nameList.add("Cakmak");
+        nameList.add("Jack");
+        nameList.add("Tom");
+        nameList.add("Kim");
+        nameList.add("Set");
+        nameList.add("Xedfier");
+        nameList.add("Bohemian");
+        nameList.add("Paradox Interactive");
+        nameList.add("Some game Developer");
     }
+
 
     @Provides
     Person providesPerson()
     {
         Person p = new Person();
         p.setId(123);
-        p.setName("Aho Naho Maho");
+        p.setName(getRandomName());
         p.setJob("Muhendis");
         return p;
     }
@@ -45,5 +63,12 @@ public class UserModule {
     {
         return new DiExtra(new Person());
     }
+
+    @Provides
+    public String getRandomName()
+    {
+        return nameList.get(new Random().nextInt(nameList.size()));
+    }
+
 
 }

@@ -9,4 +9,6 @@
     <string name="title_activity_auto_complete_text">AutoCompleteText</string>
     <string name="title_activity_recycle_view_header_example">RecycleViewHeaderExample</string>
     <string name="title_activity_dagger2_example">Dagger2Example</string>
+    <string name="title_activity_diviews">DIViews</string>
+    <string name="title_activity_expandable_list_view">ExpandableListView</string>
 </resources>

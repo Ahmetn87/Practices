@@ -48,4 +48,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dagger2 Example" />
+    <Button
+        android:id="@+id/btn_expendable_listview_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expendable ListView Example" />
 </LinearLayout>
